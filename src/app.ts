@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express'
 import bodyParser from 'body-parser'
 import Env from '@config'
 
+// Main app for server
 class App{
     public app: Application
     public port: number
@@ -45,6 +46,7 @@ class App{
         })
     }
 
+    // run the server
     run() {
         let messageListen = () => {
             console.log(`Server is running at http://localhost:${this.port}`)
