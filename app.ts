@@ -18,6 +18,7 @@ class App{
 
         app.use(bodyParser.urlencoded({ extended: false }))
         app.use(express.json())
+        app.use(express.static('public'))
     }
 
     // contains all routes
@@ -25,7 +26,7 @@ class App{
         const { app } = this
 
         app.get('/', (req: Request, res: Response) => {
-            
+
         })
 
         app.post('/', (req: Request, res: Response) => {
