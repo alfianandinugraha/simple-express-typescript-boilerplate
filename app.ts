@@ -1,5 +1,6 @@
-import express, { Application, Request, Response, NextFunction } from 'express'
+import express, { Application, Request, Response } from 'express'
 import bodyParser from 'body-parser'
+import Env from '@config'
 
 class App{
     public app: Application
@@ -22,6 +23,11 @@ class App{
 
         app.set('view engine', 'pug')
         app.set('views', 'views')
+    }
+
+    // add express middleware
+    private middleware(): void{
+
     }
 
     // contains all routes
@@ -48,5 +54,4 @@ class App{
     }
 }
 
-const PORT = 3000
-new App(PORT).run()
+new App(Env.PORT).run()
