@@ -19,6 +19,9 @@ class App{
         app.use(bodyParser.urlencoded({ extended: false }))
         app.use(express.json())
         app.use(express.static('public'))
+
+        app.set('view engine', 'pug')
+        app.set('views', 'views')
     }
 
     // contains all routes
@@ -26,7 +29,9 @@ class App{
         const { app } = this
 
         app.get('/', (req: Request, res: Response) => {
-
+            res.render('index.pug', {
+                message: 'Hello world !'
+            })
         })
 
         app.post('/', (req: Request, res: Response) => {
